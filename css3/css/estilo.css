@@ -1,3 +1,40 @@
+/* CSS do exercício Classe e ID */
+#topo {
+    background: yellow;
+}
+
+#rodape {
+    border: 2px solid grey;
+}
+
+.curso {
+    background: lightgrey;
+}
+
+.curso-destaque {
+    background: orange;
+}
+
+/* CSS do site americanas de exemplo 
+#topo {
+    background: red;
+}
+
+#promocao {
+    background: grey;
+}
+
+#produtos-promocao {
+    background: lightgray;
+}
+
+.destaque {
+    background: green;
+}
+*/
+
+
+/*
 h2 {
     color: blue;
 }
@@ -23,3 +60,4 @@ table {
 td {
     border: 5px solid black;
 }
+*/
