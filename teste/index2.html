@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PneumoFinder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fb;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        .upload-area {
+            border: 2px dashed #aaa;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            background-color: #fff;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .upload-area.dragover {
+            border-color: #0d6efd;
+            background-color: #eaf4ff;
+        }
+
+        #preview {
+            margin-top: 1rem;
+            max-width: 100%;
+            display: none;
+            border-radius: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        button {
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #0d6efd;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0b5ed7;
+        }
+
+        .info,
+        .instructions {
+            background-color: #fff;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .info p,
+        .instructions li {
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        #resultado {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Faça o upload de um raio-X para analisarmos o pulmão</h1>
+
+    <div class="container">
+
+        <!-- Bloco 1: Upload e Resultado -->
+        <div class="upload-area" id="upload-area">
+            <p id="instrucoes">Clique ou arraste a imagem aqui<br>(ou cole a imagem com Ctrl+V)</p>
+            <input type="file" id="imagem" accept="image/*" class="hidden">
+            <img id="preview" alt="Pré-visualização da imagem">
+            <p id="preview-label" class="hidden"><strong>Imagem selecionada abaixo:</strong></p>
+            <button onclick="enviarImagem()">Diagnosticar</button>
+            <p id="resultado"></p>
+        </div>
+
+        <!-- Bloco 2: Informações do Projeto -->
+        <div class="info">
+            <h2>📚 Sobre este projeto</h2>
+            <p>Este projeto foi desenvolvido como parte da disciplina de Inteligência Artificial, com fins acadêmicos e
+                educativos.</p>
+            <p>Atenção: os resultados fornecidos pela IA são estimativas com base em padrões aprendidos e <strong>não
+                    substituem diagnósticos médicos</strong>. Apesar da boa taxa de acerto, não garantimos precisão
+                clínica.</p>
+            <p>Imagens com baixa qualidade, textos embutidos ou figuras que não pertencem ao raio-X podem prejudicar a
+                análise da IA.</p>
+        </div>
+
+        <!-- Bloco 3: Instruções de Uso -->
+        <div class="instructions">
+            <h2>🧠 Como usar o PneumoFinder</h2>
+            <ul>
+                <li><strong>Passo 1:</strong> Encontre uma fonte confiável de imagens de raio-X com ou sem pneumonia.
+                </li>
+                <li><strong>Passo 2:</strong> Escolha uma imagem com boa qualidade e proporções adequadas. Evite textos
+                    ou elementos estranhos no raio-X.</li>
+                <li><strong>Passo 3:</strong> Copie ou baixe a imagem selecionada.</li>
+                <li><strong>Passo 4:</strong> Cole (Ctrl+V) ou anexe a imagem na área acima.</li>
+                <li><strong>Passo 5:</strong> Aguardando o processamento, a IA exibirá a classificação da imagem.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        const uploadArea = document.getElementById('upload-area');
+        const imagemInput = document.getElementById('imagem');
+        const preview = document.getElementById('preview');
+        const resultado = document.getElementById('resultado');
+        const instrucoes = document.getElementById('instrucoes');
+        const previewLabel = document.getElementById('preview-label');
+
+        uploadArea.addEventListener('click', () => imagemInput.click());
+
+        uploadArea.addEventListener('dragover', e => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', e => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            if (e.dataTransfer.files.length > 0) {
+                imagemInput.files = e.dataTransfer.files;
+                mostrarPreview(e.dataTransfer.files[0]);
+            }
+        });
+
+        window.addEventListener('paste', e => {
+            const item = e.clipboardData.items[0];
+            if (item.type.includes("image")) {
+                const file = item.getAsFile();
+                imagemInput.files = new DataTransfer().files;
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                imagemInput.files = dataTransfer.files;
+                mostrarPreview(file);
+            }
+        });
+
+        imagemInput.addEventListener('change', () => {
+            if (imagemInput.files.length > 0) {
+                mostrarPreview(imagemInput.files[0]);
+            }
+        });
+
+        function mostrarPreview(file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+                preview.style.display = "block";
+                instrucoes.style.display = "none";
+                previewLabel.classList.remove("hidden");
+            };
+            reader.readAsDataURL(file);
+        }
+
+        async function enviarImagem() {
+            if (imagemInput.files.length === 0) {
+                alert("Escolha uma imagem.");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("imagem", imagemInput.files[0]);
+
+            const resposta = await fetch("http://127.0.0.1:5000/diagnosticar", {
+                method: "POST",
+                body: formData
+            });
+
+            const dados = await resposta.json();
+
+            if (dados.erro) {
+                resultado.innerText = "Erro: " + dados.erro;
+            } else {
+                resultado.innerText = `Diagnóstico: ${dados.classe} (confiança: ${dados.confianca})`;
+            }
+        }
+    </script>
+</body>
+
+</html>
