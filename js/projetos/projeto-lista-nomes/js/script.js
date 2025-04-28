@@ -10,14 +10,14 @@ let nomes = [
 	"carlos"
 ]
 
-function pesquisarNome(){
+function pesquisarNome() {
 
 	let nomePesquisa = document.getElementById('campoNome').value
 	let intensLista = ''
 
-	for(indice in nomes){
+	for (indice in nomes) {
 		let nome = nomes[indice]
-		if( nomePesquisa == nome ){
+		if (nomePesquisa == nome) {
 			intensLista += `
 			<li class="list-group-item">
 				${nome}
@@ -29,11 +29,11 @@ function pesquisarNome(){
 
 }
 
-function carregarNomes(){
+function carregarNomes() {
 
 	let intensLista = ''
-	for(indice in nomes){
-		
+	for (indice in nomes) {
+
 		let nome = nomes[indice]
 
 		intensLista += `
