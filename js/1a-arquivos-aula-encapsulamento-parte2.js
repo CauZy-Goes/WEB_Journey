@@ -30,37 +30,37 @@ carro.frear()
 // Encapsulamento, modificadores de acesso e getters e setter
 class ContaBancaria {
 
-  constructor(){
+  constructor() {
     this._numeroConta = 0
     this._saldo = 0
   }
-  
-  sacar( valorSaque ){
+
+  sacar(valorSaque) {
     this._saldo = this._saldo - valorSaque
   }
-  
-  depositar( valorDeposito ){
+
+  depositar(valorDeposito) {
     this._saldo = this._saldo + valorDeposito
   }
-  
-  get saldo(){
+
+  get saldo() {
     return this._saldo
   }
-  set saldo(novoSaldo){
-    if( novoSaldo > 0 ){
-     this._saldo = novoSaldo
+  set saldo(novoSaldo) {
+    if (novoSaldo > 0) {
+      this._saldo = novoSaldo
     }
   }
-  get numeroConta(){
+  get numeroConta() {
     //Verificar se o usuario está logado
     return "Número: " + this._numeroConta
   }
-  set numeroConta( numero ){
-    if( numero > 0 ){
-     this._numeroConta = numero
+  set numeroConta(numero) {
+    if (numero > 0) {
+      this._numeroConta = numero
     }
   }
-  
+
 }
 
 const conta = new ContaBancaria()
@@ -70,19 +70,4 @@ conta.saldo = 500 // segura
 conta.sacar(50) //450
 conta.depositar(100) //550
 
-console.log( conta.saldo )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(conta.saldo)
