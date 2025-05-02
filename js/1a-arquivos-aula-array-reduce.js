@@ -21,7 +21,7 @@ const produtos = [
   {nome: "Notebook", promocao: true},
   {nome: "Celular", promocao: false},
   {nome: "Mouse", promocao: false},
-]
+]ds
 
 const produtosPromo = produtos.map(
   produto => produto.promocao
@@ -44,8 +44,11 @@ const lista = [
 const funcao = (acumulado, atual) => acumulado += `<li>${atual}</li>`
 
 let listaHtml = lista.reduce(
-  funcao, "" 
+  funcao, ""
 )
+
+
+
 console.log(listaHtml)
 
 
