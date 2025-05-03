@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selecionando elementos</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+
+	<form name="cadastro">
+
+		<input type="text" name="nome" id="nome">
+		<input type="text" name="email" id="email">
+		<select name="sexo" id="sexo">
+			<option value="">--</option>
+			<option value="masculino">Masculino</option>
+			<option value="feminino">Feminino</option>
+		</select>
+
+	</form>
+
+	<button onclick="salvar()">Salvar</button>
+
+	<script type="text/javascript">
+
+		function salvar(){
+			/*
+			document.cadastro.nome.value = "Jamilton"
+			document.cadastro.email.value = "j@gmail.com"
+			document.cadastro.sexo.value = "masculino"
+			let nome = document.cadastro.nome.value
+			let email = document.cadastro.email.value
+			let sexo = document.cadastro.sexo.value
+			console.log(nome)
+			console.log(email)
+			console.log(sexo)*/
+			const obj = document.getElementById('nome')
+			console.log(obj.value)
+		}
+
+		/*
+		const obj=document.getElementsByName('cadastro')
+		console.log(obj[0])*/
+		//console.log(document.forms)
+		//console.log(document.forms[0])
+		//console.log(document.cadastro.sexo)
+		//document.cadastro.nome.value = "Jamilton"
+		//document.cadastro.sexo.value = "feminino"
+
+	</script>
+
+</body>
+</html>

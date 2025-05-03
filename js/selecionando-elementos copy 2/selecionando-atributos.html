@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selecionando elementos</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+
+	<img id="imagem" src="img/celular.png" width="500">
+
+	<a id="link" href="https://www.google.com">Clique aqui</a>
+
+	<button onclick="alterar()">Clique aqui</button>
+
+	<script type="text/javascript">
+		
+		function alterar(){
+			/*
+			const img = document.querySelector('#imagem')
+			img.src = "img/grafico.png"*/
+
+			const link = document.querySelector('#link')
+			link.href = "https://www.bing.com"
+			//console.log(link.id)
+
+
+		}
+
+		//const img = document.querySelector('#imagem')
+		//let atributo = 'src'
+		//console.log( img.getAttribute(atributo) )
+		//console.log( img['src'] )
+		//console.log( img.width )
+		//img.src = "img/grafico.png"
+
+	</script>
+
+</body>
+</html>

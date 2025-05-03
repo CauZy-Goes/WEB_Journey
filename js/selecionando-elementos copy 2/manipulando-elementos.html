@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<title>Selecionando elementos</title>
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
-
 <body>
 
 	<!--
@@ -41,7 +39,7 @@
 		//li.setAttribute('teste', '10')
 		//li.textContent = "Jamilton"
 		const texto = document.createTextNode('Jamilton')
-
+		
 
 		function adicionar() {
 			/*
@@ -49,10 +47,10 @@
 			ul.appendChild(li)*/
 
 			li.appendChild(texto)
-			ul.insertBefore(li, ul.children[1])
+			ul.insertBefore(li, ul.children[1] )
 
 			const itemClonar = document.getElementById('item-clonar')
-
+			const item = itemClonar.cloneNode(true)
 			ul.appendChild(item)
 
 		}
@@ -62,9 +60,15 @@
 		}
 
 
-
+		
 	</script>
 
 </body>
-
 </html>
+
+
+
+
+
+
+
