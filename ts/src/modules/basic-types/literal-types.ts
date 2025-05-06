@@ -23,3 +23,11 @@ export function logger(type: LogType, message: string) {
 }
 
 logger('warn', 'Log com alguma informação sobre o que houve!');
+
+
+// - Literal Types
+//     - Consegue criar tipos
+//     - *let logType: 'info'*
+//     - valores possiveis para uma possivel variável
+//     - type LogType = 'info' | 'warn' | 'error';
+//     - Code

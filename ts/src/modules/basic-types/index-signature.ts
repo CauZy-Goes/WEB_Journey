@@ -37,3 +37,12 @@ export function showMovies(movies: Movies) {
 }
 
 showMovies(movies);
+
+
+// - Index Signature
+//     - usada para objetos com formar variadas
+//     - flexibilizando a tipagem
+//     - [key: string | number]: string | number | boolean;
+//         - type Movies = {
+//         - [key: string]: Movie;
+//         - };

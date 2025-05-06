@@ -18,3 +18,8 @@ export function showProgrammer(programmer: {
 
 showProgrammer(programmer);
 showProgrammer({ name: 'Maria', skills: ['PHP'] });
+
+// - Protege das criações de atributos não inferidos
+// - *let programmer: { name: string; age: number; skills: string[] } = {  objeto aqui }*
+// - skills?
+//     - opcional

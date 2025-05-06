@@ -18,3 +18,9 @@ showProgrammer({
   contact: { email: 'jorge@argus-academy.com', phone: '+55 11 98888-7777' },
   salary: '12000',
 });
+
+// - Alias
+//     - apelido para definicação de tipo
+//     - type Salary = number | string;
+//     - APELIDO DE ACESSO AO TIPO
+//     - É TRANSFORMA NA COMPILAÇÃO
