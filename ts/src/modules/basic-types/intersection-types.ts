@@ -21,7 +21,7 @@ export const bootstrap = (): void => {
   };
 
   type CustomerDetails = Person & Customer;
-
+// dasdas
   const customer: CustomerDetails = {
     name: 'Maria',
     age: 28,
