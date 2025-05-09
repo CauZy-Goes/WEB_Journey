@@ -12,3 +12,7 @@ export const bootstrap = (): void => {
   console.log('Input: ', input.value);
   console.log('Video: ', video.volume);
 };
+
+// - Uma interface extende a outra
+//     - quando mais especifico mais functions
+//     - document.querySelector('.inputText') as HTMLInputElement

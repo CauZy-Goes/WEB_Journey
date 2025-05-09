@@ -16,3 +16,9 @@ export const bootstrap = (): void => {
   const zipCode2 = zipCodeMask(20000000); //20000-000
   console.log(zipCode2);
 };
+
+// - String
+// - refinamento e estreitamento de tipo
+// - type of é um type guard
+//     - typeof value === 'number’
+//     - tras a representação textual do nome do tipo
