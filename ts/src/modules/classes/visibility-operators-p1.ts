@@ -25,3 +25,12 @@ export const bootstrap = (): void => {
   const product = new Product('Smartphone', 4500, 10);
   console.log(product.name);
 };
+
+
+// - o JS so tem poublic
+// - TS tem private e protected
+// - Object(classe)
+//     - tem instancia
+// - Static
+//     - usa de forma global
+//     - nao tem instancia

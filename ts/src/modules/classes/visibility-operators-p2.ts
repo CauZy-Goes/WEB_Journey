@@ -43,3 +43,12 @@ export const bootstrap = (): void => {
     }
   }
 };
+
+
+// - o JS so tem poublic
+// - TS tem private e protected
+// - Object(classe)
+//     - tem instancia
+// - Static
+//     - usa de forma global
+//     - nao tem instancia
