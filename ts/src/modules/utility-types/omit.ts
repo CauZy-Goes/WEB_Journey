@@ -15,8 +15,7 @@ export const bootstrap = (): void => {
     public: boolean;
   };
 
-  interface ArticlePreview
-    extends Omit<ArticleType, 'subtitle' | 'description'> {}
+  interface ArticlePreview extends Omit<ArticleType, 'subtitle' | 'description'> {}
 
   type ArticlePreviewType = Omit<Article, 'subtitle' | 'description'>;
 
@@ -28,3 +27,7 @@ export const bootstrap = (): void => {
 
   console.log(articlePreview);
 };
+
+// - interface ArticlePreview extends Omit<ArticleType, 'subtitle' | 'description'> {}
+//     - cria uma nova interface omitindo alguns atributos
+//     - tanto interface tento interface

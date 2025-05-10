@@ -27,3 +27,8 @@ export const bootstrap = (): void => {
 
   console.log(draft);
 };
+
+
+// - Cria e todas as propriedades ficam opcionais
+// - interface PartialArticle extends Partial<ArticleType> {}
+//     - cria uma interface toda opcional

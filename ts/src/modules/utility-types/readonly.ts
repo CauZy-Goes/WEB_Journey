@@ -16,3 +16,8 @@ export const bootstrap = (): void => {
 
   console.log(articles);
 };
+
+
+// - so ler
+// - preservar o estado inicial
+// - const articles: Readonly<Article>[]
