@@ -20,7 +20,7 @@ export const bootstrap = (): void => {
         }
       }
     }
-  }
+  } 
 
   //infiniteLoop();
   console.log('Continuação...');

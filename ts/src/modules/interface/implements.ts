@@ -53,3 +53,6 @@ export const bootstrap = (): void => {
   console.log(MyResume);
   */
 };
+
+
+// uma classe faz um contrato com a interface com o implements

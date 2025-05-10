@@ -35,3 +35,8 @@ export const bootstrap = (): void => {
   myResume.addSkill({ name: 'TypeScript', level: 'advanced' });
   console.log(myResume);
 };
+
+// - type → interface
+//     - alias para interface
+
+// uma interface extends de outra
