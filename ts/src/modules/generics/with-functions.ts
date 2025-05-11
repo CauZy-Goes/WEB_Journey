@@ -30,3 +30,6 @@ export const bootstrap = (): void => {
   }
     */
 };
+
+// - flexibiliza o tipo passo por parametro
+// - function processAndReturnGerenic<T>(n: T): T {
