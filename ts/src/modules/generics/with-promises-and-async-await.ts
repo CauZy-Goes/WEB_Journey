@@ -33,3 +33,8 @@ export const bootstrap = async (): Promise<void> => {
 // -------Promise--C-----------------------Result--Then----------------------Result--
 // Async         -----Promise--------------------------Result--Await--C-C----Result
 // Async                     ----Await------Await------Result
+
+// - nao vai travar a execução
+// - tem tempo de processamento
+// - then freia e execução do código
+// - so segue o fl
