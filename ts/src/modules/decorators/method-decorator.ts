@@ -43,3 +43,6 @@ export const bootstrap = (): void => {
   const shoppingCart = new ShoppingCart();
   shoppingCart.getItems();
 };
+// - function CheckPermissions(requiredPermissions: string[]): MethodDecorator
+// - checa se o usuário tem permissão
+// - muda o comportamento do método
