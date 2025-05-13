@@ -55,3 +55,8 @@ export const bootstrap = (): void => {
   console.log(person);
   (person as any).loggerInfo();
 };
+
+
+// - type ConstructorFunction = { new (...args: any[]): {} };
+// - *@AddLogMethod*
+// - podermos usar mais de um decorados difernte do extends
