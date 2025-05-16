@@ -39,3 +39,5 @@ export const bootstrap = (): void => {
   event.checkAvailability('teste', 5);
   event.checkAvailability('teste', 3);
 };
+
+// Decora Parametros
