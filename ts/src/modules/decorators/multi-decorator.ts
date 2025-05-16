@@ -92,3 +92,5 @@ export const bootstrap = (): void => {
     console.warn(itemsFiltered);
   });
 };
+
+// vários decoradores
