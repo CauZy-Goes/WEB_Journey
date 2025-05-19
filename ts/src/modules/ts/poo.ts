@@ -1,101 +1,104 @@
-type TipoAnimal = {
-  nome: string
-  idade: number
-  peso: number
-  altura: number
-}
+import { TipoAnimal, TipoCachorro } from './types/global.s'; // ajuste o caminho conforme sua estrutura
 
-type TipoCachorro = {
-  raca: string
-}
+import { PooService } from './poo-service.js';
 
 class Animal implements TipoAnimal {
-  private _nome: string
-  private _idade: number
-  private _peso: number
-  private _altura: number
+  private _nome: string;
+  private _idade: number;
+  private _peso: number;
+  private _altura: number;
 
   constructor(nome: string, idade: number, peso: number, altura: number) {
-    this._nome = nome
-    this._idade = idade
-    this._peso = peso
-    this._altura = altura
+    this._nome = nome;
+    this._idade = idade;
+    this._peso = peso;
+    this._altura = altura;
   }
 
   // Getters e setters
   get nome(): string {
-    return this._nome
+    return this._nome;
   }
 
   set nome(valor: string) {
-    this._nome = valor
+    this._nome = valor;
   }
 
   get idade(): number {
-    return this._idade
+    return this._idade;
   }
 
   set idade(valor: number) {
-    this._idade = valor
+    this._idade = valor;
   }
 
   get peso(): number {
-    return this._peso
+    return this._peso;
   }
 
   set peso(valor: number) {
-    this._peso = valor
+    this._peso = valor;
   }
 
   get altura(): number {
-    return this._altura
+    return this._altura;
   }
 
   set altura(valor: number) {
-    this._altura = valor
+    this._altura = valor;
   }
 
   descrever(): string {
-    return `${this._nome} tem ${this._idade} anos, pesa ${this._peso}kg e mede ${this._altura}cm.`
+    return `${this._nome} tem ${this._idade} anos, pesa ${this._peso}kg e mede ${this._altura}cm.`;
   }
 }
 
 class Cachorro extends Animal implements TipoCachorro {
-  private _raca: string
+  private _raca: string;
 
   constructor(
     nome: string,
     idade: number,
     peso: number,
     altura: number,
-    raca: string
+    raca: string,
   ) {
-    super(nome, idade, peso, altura)
-    this._raca = raca
+    super(nome, idade, peso, altura);
+    this._raca = raca;
   }
 
   // Getter e setter para raca
   get raca(): string {
-    return this._raca
+    return this._raca;
   }
 
   set raca(valor: string) {
-    this._raca = valor
+    this._raca = valor;
   }
 
   descrever(): string {
-    return `O cachorro da raça ${this._raca} com o nome de ${this.nome} tem ${this.idade} anos, pesa ${this.peso}kg e mede ${this.altura}cm.`
+    return `O cachorro da raça ${this._raca} com o nome de ${this.nome} tem ${this.idade} anos, pesa ${this.peso}kg e mede ${this.altura}cm.`;
   }
 }
 
-const cachorro = new Cachorro('', 0, 0, 0, '')
+const cachorro = new Cachorro('', 0, 0, 0, '');
 
-cachorro.nome = 'Rex'
-cachorro.idade = 5
-cachorro.peso = 22
-cachorro.altura = 55
-cachorro.raca = 'Golden Retriever'
+cachorro.nome = 'Rex';
+cachorro.idade = 5;
+cachorro.peso = 22;
+cachorro.altura = 55;
+cachorro.raca = 'Golden Retriever';
 
-console.log(cachorro.descrever())
-// Saída: O cachorro da raça Golden Retriever com o nome de Rex tem 5 anos, pesa 22kg e mede 55cm.
+const animal = new Animal('', 0, 0, 0);
 
+animal.nome = 'Brutos';
+animal.idade = 10;
+animal.peso = 12;
+animal.altura = 35;
+
+console.log(cachorro.descrever());
+console.log(animal.descrever());
+
+console.log(
+  `O animal mas pesado é o ${PooService.compararPeso(animal, cachorro)?.nome}`,
+);
