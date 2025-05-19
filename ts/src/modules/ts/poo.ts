@@ -29,6 +29,9 @@ class Animal implements TipoAnimal {
   }
 
   set idade(valor: number) {
+    if (!Number.isInteger(valor)) {
+      throw new Error('A idade deve ser um número inteiro');
+    }
     this._idade = valor;
   }
 
@@ -85,8 +88,8 @@ const cachorro = new Cachorro('', 0, 0, 0, '');
 
 cachorro.nome = 'Rex';
 cachorro.idade = 5;
-cachorro.peso = 22;
-cachorro.altura = 55;
+cachorro.peso = 22.5;
+cachorro.altura = 55.5;
 cachorro.raca = 'Golden Retriever';
 
 const animal = new Animal('', 0, 0, 0);
@@ -94,7 +97,7 @@ const animal = new Animal('', 0, 0, 0);
 animal.nome = 'Brutos';
 animal.idade = 10;
 animal.peso = 12;
-animal.altura = 35;
+animal.altura = 35.2;
 
 console.log(cachorro.descrever());
 console.log(animal.descrever());
