@@ -1,0 +1,5 @@
+npx tsc poo.ts
+
+npx tsc
+
+node poo.js
