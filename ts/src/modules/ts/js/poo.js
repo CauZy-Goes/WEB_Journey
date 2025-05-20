@@ -21,8 +21,8 @@ class Animal {
         return this._idade;
     }
     set idade(valor) {
-        if (Number.isInteger(valor)) {
-            throw new Error('A idade deve ser um númeo inteiro');
+        if (!Number.isInteger(valor)) {
+            throw new Error('A idade deve ser um número inteiro');
         }
         this._idade = valor;
     }
