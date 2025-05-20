@@ -45,6 +45,8 @@ li {
   align-items: center;
 }
 
-li button {
-  margin-left: 10px;
-}
+li .button-container {
+    width: 30%;
+    display: flex;
+  justify-content: space-around;
+} 

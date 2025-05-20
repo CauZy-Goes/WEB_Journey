@@ -42,8 +42,12 @@ async function loadTasks() {
       await loadTasks();
     };
 
-    li.appendChild(btnEdit);
-    li.appendChild(btnDelete);
+    const divBt = document.createElement('div');
+    divBt.className = 'button-container';
+
+    li.appendChild(divBt);
+    divBt.appendChild(btnEdit);
+    divBt.appendChild(btnDelete);
     taskList.appendChild(li);
   });
 }
