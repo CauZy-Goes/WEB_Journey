@@ -1,3 +1,0 @@
-npx create-next-app@latest react-fundamentos - so usa o recurso em tempo de execução
-
-npm run dev
