@@ -1,3 +1,5 @@
+//componentes de interface
+
 export function Acomodacao(){
     return (
         <div>
