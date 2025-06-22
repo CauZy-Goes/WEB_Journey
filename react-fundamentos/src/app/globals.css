@@ -19,3 +19,13 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.meuTexto {
+  @apply bg-red-500 p-5;
+  @apply hover:bg-purple-500;
+}
+
+.campo-texto {
+  @apply bg-gray-200 p-1;
+  @apply rounded-md;
+}
