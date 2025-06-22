@@ -7,9 +7,9 @@ export default function Page(){
         {id: 4, nome: "Maria", email: "m@gmail.com"},
         {id: 5, nome: "Carlos", email: "c@gmail.com"},
     ]
-
+// usar a chave key
     const lista = usuarios.map( usuario =>
-        <li key={usuario.id}>
+        <li key={usuario.id}> 
             { usuario.nome } ( { usuario.email } )
         </li>
     )

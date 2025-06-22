@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image" //do next, melhorar a imagem melhor que img
 
 export default function Page(){
 
