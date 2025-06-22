@@ -31,7 +31,7 @@ export function MenuItem( props: any ){
 interface CabecalhoProps {
     titulo: string
     subtitulo: string
-    className?: string
+    className?: string //pode ter ou nao
 }
 
 export function Cabecalho( props: CabecalhoProps ){

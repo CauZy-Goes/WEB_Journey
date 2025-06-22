@@ -1,4 +1,4 @@
-'use client'
+'use client' //usa o navegador para executar do lado no cliente
 
 import { useState } from "react"
 
@@ -6,6 +6,7 @@ export default function Page(){
 
     //let numero = 0
     let [numero, setNumero] = useState(0)
+    
     function incrementar(){
         //numero += 1
         setNumero( numero + 1 )
