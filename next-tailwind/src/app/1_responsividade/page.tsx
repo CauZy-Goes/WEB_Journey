@@ -14,3 +14,9 @@ export default function Responsividade(){
         </div>
     )
 }
+
+// - BreakPoint
+//     - estados de quebra de layout
+//     - sm, md, lg, xl, 2xl
+//     - 640px, 768px, 1024px, 1280px, 1536px
+//     - controla oque e como vai ser ebibido de acordo com o tamanho do dispositivo

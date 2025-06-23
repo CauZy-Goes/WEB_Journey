@@ -1,3 +1,9 @@
 Criando projeto
 npx create-next-app@latest next-tailwind
 
+Instalando as dependencia do package.json
+npm install
+
+
+roda
+npm run dev
