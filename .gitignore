@@ -22,6 +22,7 @@ Thumbs.db       # Windows
 *.tmp
 *.swp
 
+
 # Ambiente
 .env
 .env.*
@@ -40,7 +41,7 @@ Thumbs.db       # Windows
 
 # testing
 /coverage
-
+/.next
 # next.js
 /.next/
 /out/
