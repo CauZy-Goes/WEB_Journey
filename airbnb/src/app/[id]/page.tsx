@@ -7,6 +7,8 @@ import Galeria from "@/widgets/Galeria";
 import Rodape from "@/widgets/Rodape";
 import { notFound } from "next/navigation";
 
+// PAGINA DINAMICA
+
 interface PageProps {
     id: string
 }
